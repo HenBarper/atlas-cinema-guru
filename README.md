@@ -14,7 +14,7 @@ ________________________________________________________________________________
 <a name="overview"></a>
 
 ### Resources
-- [React Hooks](https://legacy.reactjs.org/docs/hooks-intro.html)
+- [React Hooks](https://www.w3schools.com/react/react_hooks.asp)
 - [React Font Awesome](https://docs.fontawesome.com/v5/web/use-with/react)
 - [React Router](https://reactrouter.com/en/main)
 - [axios](https://github.com/axios/axios)
