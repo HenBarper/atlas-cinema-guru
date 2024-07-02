@@ -1,0 +1,56 @@
+html {
+  background-color: #1C1C1C;
+  color: red;
+}
+
+.icon {
+  color: #000000;
+  opacity: 40%;
+}
+
+/* ----- INPUT ----- */
+.input {
+  margin: auto;
+  color: #FFFFFF;
+}
+
+.input Input {
+  border: none;
+  border-bottom: 2px solid #BB000E;
+  width: 80%;
+}
+
+/* ----- SELECT INPUT ----- */
+.selectInput {
+  border: none;
+  border-bottom: 2px solid #BB000E;
+  background-color: #2C2C2C;
+  color: #FFFFFF;
+}
+
+.selectInput option {
+  background-color: #2C2C2C;
+  color: #FFFFFF;
+}
+
+/* ----- BUTTON ----- */
+.button {
+  border-radius: 10px;
+  background-color: #BB000E;
+  color: #FFFFFF !important;
+  opacity: 100% !important;
+  border: 0;
+}
+
+/* ----- SEARCHBAR -----*/
+.searchBar {
+  border-radius: 25px;
+  background-color: #2C2C2C;
+  color: #FFFFFF;
+  opacity: 50%;
+  border: 0;
+}
+
+.searchBar:hover, .searchBar:focus{
+  opacity: 100%;
+}
