@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import './auth.css';
 import PropTypes from 'prop-types';
+import axios from 'axios';
 
 // COMPONENT IMPORTS --------------------------------
 import Button from '../../components/general/Button';
@@ -13,6 +14,36 @@ function Authentication({ setIsLoggedIn, setUserUsername }) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    const url = _switch ? 'http://localhost:8000/api/auth/login' : 'http://localhost:8000/api/auth/register';
+    const data = { username, password };
+
+    // console.log('Submitting to URL:', url);
+    // console.log('Data:', data);
+
+    try {
+      const response = await axios.post(url, data, {
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        }
+      });
+
+      console.log('Response:', response);
+
+      if (response.data.accessToken) {
+        console.log('Success');
+        localStorage.setItem('accessToken', response.data.accessToken);
+        setUserUsername(username);
+        setIsLoggedIn(true);
+      }
+    } catch (error) {
+      console.error('Error:', error.response ? error.response.data : error.message);
+    }
+  };
+
   function handleSignIn() {
     set_switch(true);
   }
@@ -22,7 +53,7 @@ function Authentication({ setIsLoggedIn, setUserUsername }) {
 
   return (
     <>
-      <form className='authForm'>
+      <form className='authForm' onSubmit={handleSubmit}>
         {_switch ? <div>
           <Button label='Sign In' className='inactive-button' onClick={handleSignIn} />
           <Button label='Sign Up' className='active-button' onClick={handleSignUp} />

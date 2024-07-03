@@ -15,7 +15,7 @@ function Register({ userName, password, setUserName, setPassword }) {
     <>
       <Input label='Username:' type='text' className='input' value={userName} setValue={setUserName} icon={userIcon} />
       <Input label='Password:' type='text' className='input' value={password} setValue={setPassword} icon={keyIcon} />
-      <Button label='Sign Up' className='button' onClick={() => {}} icon={keyIcon} />
+      <Button label='Sign Up' type='submit' className='button' onClick={() => {}} icon={keyIcon} />
     </>
   )
 }

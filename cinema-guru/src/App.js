@@ -19,7 +19,7 @@ import { searchIcon } from './assets/fontIcons';
 //   { name: 'opTwo', id: '2' },
 //   { name: 'opThree', id:'3' }
 // ]
-const Dashboard = (username) => <div>Welcome to the Dashboard {username}</div>;
+// const Dashboard = (username) => <div>Welcome to the Dashboard {username}</div>;
 
 function App() {
   // LOG IN STATE --------------------------------------------------
@@ -39,9 +39,10 @@ function App() {
       })
       .then(response => {
         console.log(`Response success`)
-        if (response.data.success) {
+        console.log(response);
+        if (response.request.status === 200) {
           setIsLoggedIn(true);
-          console.log(`username: ${response.data.username}`);
+          console.log(`username: ${response.data.username} isLoggedIn: ${isLoggedIn}`);
           setUserUsername(response.data.username);
         }
       })
@@ -65,7 +66,8 @@ function App() {
       <SearchBar title={searchTitle} setTitle={setSearchTitle} icon={searchIcon}/>
       {/* <Authentication setIsLoggedIn={setIsLoggedIn} setUserUsername={setUserUsername}/> */}
       {isLoggedIn ? (
-        <Dashboard userName={userUsername}/>
+        // <Dashboard userName={userUsername}/>
+        <Authentication setIsLoggedIn={setIsLoggedIn} setUserUsername={setUserUsername}/>
       ) : (
         <Authentication setIsLoggedIn={setIsLoggedIn} setUserUsername={setUserUsername}/>
       )}

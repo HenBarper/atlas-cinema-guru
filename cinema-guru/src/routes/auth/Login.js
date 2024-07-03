@@ -15,7 +15,7 @@ function Login({ userName, password, setUserName, setPassword }) {
     <>
       <Input label='Username:' type='text' className='input' value={userName} setValue={setUserName} icon={userIcon} />
       <Input label='Password:' type='text' className='input' value={password} setValue={setPassword} icon={keyIcon} />
-      <Button label='Log In' className='button' onClick={() => {}} icon={keyIcon} />
+      <Button label='Log In' type='submit' className='button' onClick={() => {}} icon={keyIcon} />
     </>
   )
 }
