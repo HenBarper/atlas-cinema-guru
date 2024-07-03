@@ -1,31 +1,25 @@
-// BASE IMPORTS -----------------
+// BASE IMPORTS ----------------------------
 import { useEffect, useState } from 'react';
 import './App.css';
 import axios from 'axios';
 
-// COMPONENT IMPORTS --------------------------------------
-import Input from './components/general/Input'
-import SelectInput from './components/general/SelectInput';
-import Button from './components/general/Button';
+// COMPONENT IMPORTS ----------------------------------------
+// import Input from './components/general/Input';
+// import SelectInput from './components/general/SelectInput';
+// import Button from './components/general/Button';
 import SearchBar from './components/general/SearchBar';
+import Authentication from './routes/auth/Authentication'; 
 
-// ICON IMPORTS ------------------------------------------------
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUser, faKey, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
-
-// ICONS ---------------------------------------------------------
-const userIcon = <FontAwesomeIcon icon={faUser} className='icon'/>
-const keyIcon = <FontAwesomeIcon icon={faKey} className='icon'/>
-const searchIcon = <FontAwesomeIcon icon={faMagnifyingGlass} className='icon'/>
+// ICON IMPORTS --------------------------------
+import { searchIcon } from './assets/fontIcons';
 
 // DEAFULT/TESTING OBJECTS & COMPONENTS
-const selectOptions = [
-  { name: 'opOne', id: '1' },
-  { name: 'opTwo', id: '2' },
-  { name: 'opThree', id:'3' }
-]
+// const selectOptions = [
+//   { name: 'opOne', id: '1' },
+//   { name: 'opTwo', id: '2' },
+//   { name: 'opThree', id:'3' }
+// ]
 const Dashboard = (username) => <div>Welcome to the Dashboard {username}</div>;
-const Authentication = () => <div>Please authenticate</div>;
 
 function App() {
   // LOG IN STATE --------------------------------------------------
@@ -58,21 +52,22 @@ function App() {
   }, []);
 
   // COMPONENT STATES ----------------------------------
-  const [userName, setUserName] = useState('');
-  const [optionSelect, setOptionSelect] = useState('');
+  // const [userName, setUserName] = useState('');
+  // const [optionSelect, setOptionSelect] = useState('');
   const [searchTitle, setSearchTitle] = useState('');
 
   // RENDERED COMPONENTS ---------------------------------------------------------------------------------------------------------
   return (
     <div className='App'>
-      <Input label='Username:' type='text' className='input' value={userName} setValue={setUserName} icon={userIcon} />
-      <SelectInput label='Sort:' options={selectOptions} className='selectInput' value={optionSelect} setValue={setOptionSelect}/>
-      <Button label='signUp' className='button' onClick={() => {}} icon={keyIcon} /><br></br>
+      {/* <Input label='Username:' type='text' className='input' value={userName} setValue={setUserName} icon={userIcon} /> */}
+      {/* <SelectInput label='Sort:' options={selectOptions} className='selectInput' value={optionSelect} setValue={setOptionSelect}/> */}
+      {/* <Button label='signUp' className='button' onClick={() => {}} icon={keyIcon} /><br></br> */}
       <SearchBar title={searchTitle} setTitle={setSearchTitle} icon={searchIcon}/>
+      {/* <Authentication setIsLoggedIn={setIsLoggedIn} setUserUsername={setUserUsername}/> */}
       {isLoggedIn ? (
         <Dashboard userName={userUsername}/>
       ) : (
-        <Authentication />
+        <Authentication setIsLoggedIn={setIsLoggedIn} setUserUsername={setUserUsername}/>
       )}
     </div>
   );

@@ -11,7 +11,7 @@ html {
 /* ----- INPUT ----- */
 .input {
   margin: auto;
-  color: #FFFFFF;
+  /* color: #FFFFFF; */
 }
 
 .input Input {
@@ -35,8 +35,19 @@ html {
 
 /* ----- BUTTON ----- */
 .button {
-  border-radius: 10px;
   background-color: #BB000E;
+  color: #FFFFFF !important;
+  opacity: 100% !important;
+  border: 0;
+}
+.active-button {
+  background-color: #BB000E;
+  color: #FFFFFF !important;
+  opacity: 100% !important;
+  border: 0;
+}
+.inactive-button {
+  background-color: #E31C25;
   color: #FFFFFF !important;
   opacity: 100% !important;
   border: 0;
@@ -49,6 +60,7 @@ html {
   color: #FFFFFF;
   opacity: 50%;
   border: 0;
+  width: 30%;
 }
 
 .searchBar:hover, .searchBar:focus{
