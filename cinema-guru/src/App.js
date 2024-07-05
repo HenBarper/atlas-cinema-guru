@@ -1,10 +1,5 @@
 // BASE IMPORTS ----------------------------
 import { useEffect, useState } from 'react';
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-} from "react-router-dom";
 import './App.css';
 import axios from 'axios';
 
@@ -41,25 +36,6 @@ function App() {
   // RENDERED COMPONENTS ----------------------------------------------------------------
   return (
     <div className='App'>
-      <BrowserRouter>
-        <Routes>
-            <Route
-                exact
-                path="/"
-                element={<Home />}
-            />
-            <Route
-                exact
-                path="/favorites"
-                element={<Favorites />}
-            />
-            <Route
-                exact
-                path="/watchlater"
-                element={<WatchLater />}
-            />
-        </Routes>
-      </BrowserRouter>
       {isLoggedIn ? (
         <Dashboard userUsername={userUsername} setIsLoggedIn={setIsLoggedIn} />
       ) : (

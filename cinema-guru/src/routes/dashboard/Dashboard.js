@@ -2,6 +2,12 @@
 import './dashboard.css';
 import PropTypes from 'prop-types';
 import { useState } from 'react';
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Navigate
+} from "react-router-dom";
 
 // COMPONENT IMPORTS -----------------------------------
 import Header from '../../components/navigation/Header';
@@ -16,12 +22,20 @@ function Dashboard ({ userUsername, setIsLoggedIn }) {
   const [searchTitle, setSearchTitle] = useState('');
 
   return (
-    <div className='dashboard'>
-      <SearchBar title={searchTitle} setTitle={setSearchTitle} icon={searchIcon}/>
-      <Header userUsername={userUsername} setIsLoggedIn={setIsLoggedIn} />
-      <p>This is the dashboard!</p>
-      <SideBar />
-    </div>
+    <BrowserRouter>
+      <div className='dashboard'>
+        <SearchBar title={searchTitle} setTitle={setSearchTitle} icon={searchIcon}/>
+        <Header userUsername={userUsername} setIsLoggedIn={setIsLoggedIn} />
+        <p>This is the dashboard!</p>
+        <SideBar />
+        <Routes>
+          <Route path='/home' element={<Home />} />
+          <Route path='/favorites' element={<Favorites />} />
+          <Route path='/watchlater' element={<WatchLater />} />
+          <Route path='*' element={<Navigate to='/home' />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   )
 }
 
