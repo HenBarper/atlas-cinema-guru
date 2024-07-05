@@ -34,7 +34,7 @@ function Authentication({ setIsLoggedIn, setUserUsername }) {
       console.log('Response:', response);
 
       if (response.data.accessToken) {
-        console.log('Success');
+        console.log(`Authentication js Success!`);
         localStorage.setItem('accessToken', response.data.accessToken);
         setUserUsername(username);
         setIsLoggedIn(true);
