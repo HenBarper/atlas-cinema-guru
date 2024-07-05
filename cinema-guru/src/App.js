@@ -8,7 +8,8 @@ import axios from 'axios';
 // import SelectInput from './components/general/SelectInput';
 // import Button from './components/general/Button';
 import SearchBar from './components/general/SearchBar';
-import Authentication from './routes/auth/Authentication'; 
+import Authentication from './routes/auth/Authentication';
+import Dashboard from './routes/dashboard/Dashboard';
 
 // ICON IMPORTS --------------------------------
 import { searchIcon } from './assets/fontIcons';
@@ -19,7 +20,6 @@ import { searchIcon } from './assets/fontIcons';
 //   { name: 'opTwo', id: '2' },
 //   { name: 'opThree', id:'3' }
 // ]
-// const Dashboard = (username) => <div>Welcome to the Dashboard {username}</div>;
 
 function App() {
   // LOG IN STATE --------------------------------------------------
@@ -66,8 +66,7 @@ function App() {
       <SearchBar title={searchTitle} setTitle={setSearchTitle} icon={searchIcon}/>
       {/* <Authentication setIsLoggedIn={setIsLoggedIn} setUserUsername={setUserUsername}/> */}
       {isLoggedIn ? (
-        // <Dashboard userName={userUsername}/>
-        <Authentication setIsLoggedIn={setIsLoggedIn} setUserUsername={setUserUsername}/>
+        <Dashboard userUsername={userUsername} setIsLoggedIn={setIsLoggedIn} />
       ) : (
         <Authentication setIsLoggedIn={setIsLoggedIn} setUserUsername={setUserUsername}/>
       )}
