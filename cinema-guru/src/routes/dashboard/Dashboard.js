@@ -11,11 +11,7 @@ import {
 
 // COMPONENT IMPORTS -----------------------------------
 import Header from '../../components/navigation/Header';
-import SearchBar from '../../components/general/SearchBar';
 import SideBar from '../../components/navigation/SideBar';
-
-// ICON IMPORTS
-import { searchIcon } from '../../assets/fontIcons';
 
 function Dashboard ({ userUsername, setIsLoggedIn }) {
   // COMPONENT SATES
@@ -24,7 +20,6 @@ function Dashboard ({ userUsername, setIsLoggedIn }) {
   return (
     <BrowserRouter>
       <div className='dashboard'>
-        <SearchBar title={searchTitle} setTitle={setSearchTitle} icon={searchIcon}/>
         <Header userUsername={userUsername} setIsLoggedIn={setIsLoggedIn} />
         <p>This is the dashboard!</p>
         <SideBar />
