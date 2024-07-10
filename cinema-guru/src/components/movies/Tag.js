@@ -6,7 +6,7 @@ function Tag({ genre, filter, genres, setGenres }) {
   const [selected, setSelected] = useState(false);
 
   function handleTag() {
-    if (isSelected) {
+    if (selected) {
       setGenres(genres.filter(g => g !== genre));
     } else {
       setGenres([...genres, genre]);
@@ -15,13 +15,13 @@ function Tag({ genre, filter, genres, setGenres }) {
   }
 
   return (
-    <li onClick={handleTag}>{genre}</li>
+    <li onClick={handleTag}>{genre}</li> // () => ?
   )
 }
 
 Tag.propTypes = {
   genre: PropTypes.string.isRequired,
-  filter: PropTypes.bool,
+  filter: PropTypes.bool.isRequired,
   genres: PropTypes.array.isRequired,
   setGenres: PropTypes.func.isRequired
 }

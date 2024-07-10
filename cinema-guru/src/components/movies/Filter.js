@@ -6,26 +6,29 @@ import { searchIcon } from '../../assets/fontIcons';
 import SearchBar from '../general/SearchBar';
 import Input from '../general/Input';
 import SelectInput from '../general/SelectInput';
+import Tag from './Tag';
 
 const filterOptions = [
   {name: 'latest', id: '001'},
   {name: 'oldest', id: '002'},
-  {name: 'highestRated', id: '003'},
-  {name: 'lowestRated', id: '004'},
-]
+  {name: 'highest rated', id: '003'},
+  {name: 'lowest rated', id: '004'},
+];
 
-function Filter (minYear, setMinYear, maxYear, setMaxYear, sort, setSort, genres, setGenres, title, setTitle) {
+function Filter({ minYear, setMinYear, maxYear, setMaxYear, sort, setSort, genres, setGenres, title, setTitle }) {
   const tags = ["action", "drama", "comedy", "biography", "romance", "thriller", "war", "history", "sport", "sci-fi", "documentary", "crime", "fantasy"];
 
-  function handleMinYear () {
-    setMinYear(minYear);
-  }
-  function handleMaxYear () {
-    setMaxYear(maxYear);
-  }
-  function handleSort () {
-    setSort(sort)
-  }
+  const handleMinYear = (value) => {
+    setMinYear(Number(value));
+  };
+
+  const handleMaxYear = (value) => {
+    setMaxYear(Number(value));
+  };
+
+  const handleSort = (value) => {
+    setSort(value);
+  };
 
   return (
     <div>
@@ -37,20 +40,20 @@ function Filter (minYear, setMinYear, maxYear, setMaxYear, sort, setSort, genres
         <Tag key={tag} genre={tag} filter={true} genres={genres} setGenres={setGenres} />
       ))}
     </div>
-  )
+  );
 }
 
 Filter.propTypes = {
-  minyear: PropTypes.number,
-  setMinYear: PropTypes.func,
-  maxYear: PropTypes.number,
-  setMaxYear: PropTypes.func,
-  sort: PropTypes.string,
-  setSort: PropTypes.func,
-  genres: PropTypes.string,
-  setGenres: PropTypes.func,
-  title: PropTypes.string,
-  setTitle: PropTypes.func
-}
+  minYear: PropTypes.number.isRequired,
+  setMinYear: PropTypes.func.isRequired,
+  maxYear: PropTypes.number.isRequired,
+  setMaxYear: PropTypes.func.isRequired,
+  sort: PropTypes.string.isRequired,
+  setSort: PropTypes.func.isRequired,
+  genres: PropTypes.array.isRequired,
+  setGenres: PropTypes.func.isRequired,
+  title: PropTypes.string.isRequired,
+  setTitle: PropTypes.func.isRequired
+};
 
 export default Filter;

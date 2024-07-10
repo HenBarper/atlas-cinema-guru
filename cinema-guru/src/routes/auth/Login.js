@@ -8,14 +8,17 @@ import Button from '../../components/general/Button';
 import Input from '../../components/general/Input';
 
 // ICON IMPORTS -------------------------------------------
-import { userIcon, keyIcon } from '../../assets/fontIcons';
+import { userIcon, keyIcon, keyButtonIcon } from '../../assets/fontIcons';
 
 function Login({ userName, password, setUserName, setPassword }) {
   return (
     <>
-      <Input label='Username:' type='text' className='input' value={userName} setValue={setUserName} icon={userIcon} />
-      <Input label='Password:' type='text' className='input' value={password} setValue={setPassword} icon={keyIcon} />
-      <Button label='Log In' type='submit' className='button' onClick={() => {}} icon={keyIcon} />
+      <p className='auth-header'>Sign in with your account</p>
+      <Input label='Username:' type='text' className='input auth-input' value={userName} setValue={setUserName} icon={userIcon} />
+      <Input label='Password:' type='text' className='input auth-input' value={password} setValue={setPassword} icon={keyIcon} />
+      <div className='submit-auth-container'>
+        <Button label=' Log In' type='submit' className='button submit-auth-button' onClick={() => {}} icon={keyButtonIcon} />
+      </div>
     </>
   )
 }

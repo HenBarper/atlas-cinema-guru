@@ -25,7 +25,7 @@ function SideBar() {
         'Authorization': `Bearer ${accessToken}`
       }
     }).then(response => {
-      console.log(`SideBar success get: ${response.data}`);
+      console.log(`SideBar success get response.data aka activities: ${response.data}`);
       setActivities(response.data);
     }).catch(error => {
       console.error(`Sidebar Error: ${error}`);
@@ -40,8 +40,8 @@ function SideBar() {
       case 'Home':
         navigate('/');
         break;
-      case 'Favorites':
-        navigate('/favorites');
+      case 'Favorite':
+        navigate('/favorite');
         break;
       case 'Watch Later':
         navigate('/watchlater');
@@ -58,7 +58,7 @@ function SideBar() {
       <h1>Side Bar</h1>
       <ul className='navigation'>
         <li onClick={() => setPage('Home')}>{folderIcon} Home</li>
-        <li onClick={() => setPage('Favorites')}>{starIcon} Favorites</li>
+        <li onClick={() => setPage('Favorite')}>{starIcon} Favorites</li>
         <li onClick={() => setPage('Watch Later')}>{clockIcon} Watch Later</li>
       </ul>
       <ul className='activity-list'>
@@ -70,6 +70,7 @@ function SideBar() {
           <p>no activites</p>
         }
       </ul>
+      <h1>Side Bar End</h1>
     </nav>
   )
 }

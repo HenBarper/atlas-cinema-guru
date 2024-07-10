@@ -1,6 +1,6 @@
 html {
-  background-color: #716868;
-  color: red;
+  background-color: #1C1C1C;
+  /* color: red; */
 }
 
 .icon {
@@ -14,10 +14,11 @@ html {
   /* color: #FFFFFF; */
 }
 
-.input Input {
+.input input {
   border: none;
   border-bottom: 2px solid #BB000E;
-  width: 80%;
+  width: 95%;
+  /* text-align: center; */
 }
 
 /* ----- SELECT INPUT ----- */

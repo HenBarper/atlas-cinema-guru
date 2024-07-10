@@ -12,6 +12,9 @@ import {
 // COMPONENT IMPORTS -----------------------------------
 import Header from '../../components/navigation/Header';
 import SideBar from '../../components/navigation/SideBar';
+import HomePage from './HomePage';
+import Favorites from './Favorites';
+import WatchLater from './WatchLater';
 
 function Dashboard ({ userUsername, setIsLoggedIn }) {
   // COMPONENT SATES
@@ -21,14 +24,15 @@ function Dashboard ({ userUsername, setIsLoggedIn }) {
     <BrowserRouter>
       <div className='dashboard'>
         <Header userUsername={userUsername} setIsLoggedIn={setIsLoggedIn} />
-        <p>This is the dashboard!</p>
+        <h1>Dashboard</h1>
         <SideBar />
         <Routes>
-          <Route path='/home' element={<Home />} />
-          <Route path='/favorites' element={<Favorites />} />
+          <Route path='/home' element={<HomePage />} />
+          <Route path='/favorite' element={<Favorites />} />
           <Route path='/watchlater' element={<WatchLater />} />
           <Route path='*' element={<Navigate to='/home' />} />
         </Routes>
+        <h1>Dashboard End</h1>
       </div>
     </BrowserRouter>
   )

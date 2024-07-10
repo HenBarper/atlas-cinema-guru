@@ -2,7 +2,7 @@ import './components.css';
 
 function Activity({ activity }) {
   return (
-    <li>{`${activity.userName} added ${activity.title} to ${activity.favwatchlater} - ${activity.date}`}</li>
+    <li><p>{`${activity.user.username} added ${activity.title.title} to ${activity.activityType} - ${activity.updatedAt}`}</p></li>
   )
 }
 

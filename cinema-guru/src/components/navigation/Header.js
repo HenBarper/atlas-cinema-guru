@@ -1,7 +1,7 @@
 import './navigation.css';
 import PropTypes from 'prop-types';
 
-import { userIcon } from '../../assets/fontIcons';
+import { logoutIcon } from '../../assets/fontIcons';
 
 function Header({ userUsername, setIsLoggedIn }) {
   function Logout() {
@@ -11,11 +11,11 @@ function Header({ userUsername, setIsLoggedIn }) {
 
   return (
     <>
-      <nav>
-        <img src="https://picsum.photos/100/100"></img>
+      <nav className='header-nav'>
+        <img className='profile-img' src="https://picsum.photos/100/100"></img>
         <p>Welcome {userUsername}</p>
-        <span onClick={Logout}>
-          {userIcon} Logout
+        <span className='' onClick={Logout}>
+          {logoutIcon} Logout
         </span>
       </nav>
     </>

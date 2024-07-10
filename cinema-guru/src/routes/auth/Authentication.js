@@ -55,12 +55,12 @@ function Authentication({ setIsLoggedIn, setUserUsername }) {
     <>
       <form className='authForm' onSubmit={handleSubmit}>
         {_switch ? <div>
-          <Button label='Sign In' className='inactive-button' onClick={handleSignIn} />
-          <Button label='Sign Up' className='active-button' onClick={handleSignUp} />
+          <Button label='Sign In' className='inactive-button auth-button' onClick={handleSignIn} />
+          <Button label='Sign Up' className='active-button auth-button' onClick={handleSignUp} />
           <Login userName={username} password={password} setUserName={setUsername} setPassword={setPassword} />
         </div> : <div>
-          <Button label='Sign In' className='active-button' onClick={handleSignIn} />
-          <Button label='Sign Up' className='inactive-button' onClick={handleSignUp} />
+          <Button label='Sign In' className='active-button auth-button' onClick={handleSignIn} />
+          <Button label='Sign Up' className='inactive-button auth-button' onClick={handleSignUp} />
           <Register userName={username} password={password} setUserName={setUsername} setPassword={setPassword} />
         </div>}
       </form>

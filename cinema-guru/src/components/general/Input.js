@@ -10,7 +10,7 @@ function Input({ label, type, className, value, setValue, icon, inputAttributes 
   return (
     <div className={className}>
       {icon && icon}
-      <label>{label}</label><br></br>
+      <label> {label}</label><br></br>
       <input type={type} value={value} onChange={handleInput}></input>
     </div>
   )
