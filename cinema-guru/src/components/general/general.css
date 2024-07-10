@@ -61,7 +61,13 @@ html {
   color: #FFFFFF;
   opacity: 50%;
   border: 0;
-  width: 30%;
+  width: 90%;
+  height: 10%;
+  margin-top: 10px;
+}
+.search-icon {
+  margin-top: 12px;
+  margin-left: 10px;
 }
 
 .searchBar:hover, .searchBar:focus{

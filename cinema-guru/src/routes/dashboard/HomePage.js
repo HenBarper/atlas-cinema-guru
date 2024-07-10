@@ -64,7 +64,7 @@ function HomePage () {
         title={title} setTitle={setTitle}
       />
       <div className='movies-list'>
-        {movies.slice(0, 5).map(movie => (
+        {movies.slice(0, 10).map(movie => (
           <MovieCard key={movie.imdbId} movie={movie} />
         ))}
       </div>

@@ -4,7 +4,9 @@ import PropTypes from 'prop-types';
 
 // ICON IMPORTS
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStar, faClock } from '@fortawesome/free-solid-svg-icons';
+import { faStar as faStarSolid, faClock as faClockSolid } from '@fortawesome/free-solid-svg-icons';
+import { faStar as faStarRegular, faClock as faClockRegular } from '@fortawesome/free-regular-svg-icons';
+
 import axios from 'axios';
 import WatchLater from '../../routes/dashboard/WatchLater';
 // const starIcon = <FontAwesomeIcon icon={faStar} className='icon'/>;
@@ -93,16 +95,16 @@ function MovieCard ({ movie }) {
   }
 
   return (
-    <li>
+    <li className='movie-card-li'>
       {isFavorite ?
-        <FontAwesomeIcon icon={faStar} className='icon-true' onClick={() => handleClick('favorite')} /> 
+        <FontAwesomeIcon icon={faStarSolid} className='card-icon' onClick={() => handleClick('favorite')} /> 
         :
-        <FontAwesomeIcon icon={faStar} className='icon' onClick={() => handleClick('favorite')} />
+        <FontAwesomeIcon icon={faStarRegular} className='card-icon' onClick={() => handleClick('favorite')} />
       }
-      {isWatchLater ? <FontAwesomeIcon icon={faClock} className='icon-true' onClick={() => handleClick('watchlater')} /> :
-        <FontAwesomeIcon icon={faClock} className='icon' onClick={() => handleClick('watchlater')} />
+      {isWatchLater ? <FontAwesomeIcon icon={faClockSolid} className='card-icon' onClick={() => handleClick('watchlater')} /> :
+        <FontAwesomeIcon icon={faClockRegular} className='card-icon' onClick={() => handleClick('watchlater')} />
       }
-      <h1>title: {movie.title}</h1>
+      <h1>{movie.title}</h1>
       <p>Is Favorite: {isFavorite.toString()}, Is Watch Later: {isWatchLater.toString()}</p>
       <p>Synopsis: {movie.synopsis}</p>
       <p>Genre: {movie.genres}</p>
@@ -110,8 +112,6 @@ function MovieCard ({ movie }) {
       <p>IMDB ID: {movie.imdbId}</p>
       <p>Released: {movie.released}</p>
       <p>IMDB Rating: {movie.imdbrating}</p>
-      <p></p>
-      <p></p>
     </li>
   )
 }

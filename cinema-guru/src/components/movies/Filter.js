@@ -31,14 +31,18 @@ function Filter({ minYear, setMinYear, maxYear, setMaxYear, sort, setSort, genre
   };
 
   return (
-    <div>
-      <SearchBar title={title} setTitle={setTitle} icon={searchIcon} />
-      <Input label='Min Date:' type='number' className='minDateInput' value={minYear} setValue={handleMinYear} />
-      <Input label='Max Date:' type='number' className='maxDateInput' value={maxYear} setValue={handleMaxYear} />
-      <SelectInput label='Sort:' options={filterOptions} className='sortOptions' value={sort} setValue={handleSort} />
-      {tags.map(tag => (
-        <Tag key={tag} genre={tag} filter={true} genres={genres} setGenres={setGenres} />
-      ))}
+    <div className='filter-div'>
+      <div className='filter-inputs'>
+        <SearchBar title={title} setTitle={setTitle} icon={searchIcon} />
+        <Input label='Min Date:' type='number' className='min-date-input' value={minYear} setValue={handleMinYear} />
+        <Input label='Max Date:' type='number' className='max-date-input' value={maxYear} setValue={handleMaxYear} />
+        <SelectInput label='Sort:' options={filterOptions} className='sort-options' value={sort} setValue={handleSort} />
+      </div>
+      <div className='filter-tags'>
+        {tags.map(tag => (
+          <Tag key={tag} genre={tag} filter={true} genres={genres} setGenres={setGenres} />
+        ))}
+      </div>
     </div>
   );
 }

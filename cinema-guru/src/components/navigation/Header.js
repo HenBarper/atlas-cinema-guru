@@ -12,9 +12,10 @@ function Header({ userUsername, setIsLoggedIn }) {
   return (
     <>
       <nav className='header-nav'>
+        <p className='cinema-guru'>Cinema Guru</p>
         <img className='profile-img' src="https://picsum.photos/100/100"></img>
-        <p>Welcome {userUsername}</p>
-        <span className='' onClick={Logout}>
+        <p className='welcome-user'>Welcome, {userUsername}!</p>
+        <span className='header-span' onClick={Logout}>
           {logoutIcon} Logout
         </span>
       </nav>

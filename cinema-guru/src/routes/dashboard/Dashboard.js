@@ -18,13 +18,12 @@ import WatchLater from './WatchLater';
 
 function Dashboard ({ userUsername, setIsLoggedIn }) {
   // COMPONENT SATES
-  const [searchTitle, setSearchTitle] = useState('');
+  // const [searchTitle, setSearchTitle] = useState('');
 
   return (
     <BrowserRouter>
+      <Header userUsername={userUsername} setIsLoggedIn={setIsLoggedIn} />
       <div className='dashboard'>
-        <Header userUsername={userUsername} setIsLoggedIn={setIsLoggedIn} />
-        <h1>Dashboard</h1>
         <SideBar />
         <Routes>
           <Route path='/home' element={<HomePage />} />
@@ -32,7 +31,6 @@ function Dashboard ({ userUsername, setIsLoggedIn }) {
           <Route path='/watchlater' element={<WatchLater />} />
           <Route path='*' element={<Navigate to='/home' />} />
         </Routes>
-        <h1>Dashboard End</h1>
       </div>
     </BrowserRouter>
   )

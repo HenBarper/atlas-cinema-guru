@@ -15,7 +15,13 @@ function Tag({ genre, filter, genres, setGenres }) {
   }
 
   return (
-    <li onClick={handleTag}>{genre}</li> // () => ?
+    <>
+      {selected ? 
+        <li className='tag-li tag-li-selected' onClick={handleTag}>{genre}</li>
+      :
+        <li className='tag-li' onClick={handleTag}>{genre}</li>
+      }
+    </>
   )
 }
 
